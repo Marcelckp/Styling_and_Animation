@@ -24,6 +24,3 @@ There are four main ways to set your colours in CSS:
 
 - [ColourHunt.co](http://colorhunt.co/)
 
-// TODO: Create and commit these files to a repository for each one of these dirs in the root learning new DIR 
-
-// TODO: Make sure your PROG and CLDV are ready to go!
