@@ -113,13 +113,11 @@ IE)
 4. When using descendent selectors do not go more then 3 levels deep. IE)
 
 ```scss
-√ Acceptable 
-div .red-letters {
+√ Acceptable div .red-letters {
   color: red;
 }
 
-X Not Acceptable 
-div .red-letters h3 p {
+X Not Acceptable div .red-letters h3 p {
   color: red;
 }
 
@@ -158,7 +156,7 @@ For example if we did this:
 
 ```css
 .article:before {
-    content: ''
+  content: "";
 }
 ```
 
@@ -176,26 +174,26 @@ Another type of selector to keep in mind are `Attribute` selectors and these can
 
 ## Cascades In CSS
 
-The Cascades in CSS (cascading style sheet) comes from the concept of cascading. ***This concept shares similarities with inheritance***
+The Cascades in CSS (cascading style sheet) comes from the concept of cascading. **_This concept shares similarities with inheritance_**
 
-In short ***inheritance*** applies to DOM nodes and them inheriting from the relationships, think Parent child relationships for HTML elements.
+In short **_inheritance_** applies to DOM nodes and them inheriting from the relationships, think Parent child relationships for HTML elements.
 
-The ***Cascade*** Is about the relationship between multiple stylesheets.
+The **_Cascade_** Is about the relationship between multiple stylesheets.
 
-*This can be annoying. If you have multiple style sheets this means that the styles defined in one will be passed down to all other style sheets. (The styles cascade/fall down from one sheet to another)*
+_This can be annoying. If you have multiple style sheets this means that the styles defined in one will be passed down to all other style sheets. (The styles cascade/fall down from one sheet to another)_
 
 <font color=lightgreen>In even shorter: The fact that multiple stylesheets can affect the same document revolves around the concept of cascade in CSS. Think the ability for the browser to already have default styles and us creating our own style sheet to override those styles. This is as example of 2 stylesheets effecting the same DOM application. This is `Cascading`!!!!!!!!!!!!!!</font>
 
 <br />
 
-Ordering of our style declarations matter, if you place conflicting styles together the last style declared will take prescidance. 
+Ordering of our style declarations matter, if you place conflicting styles together the last style declared will take prescidance.
 
 IE)
 
 ```css
 /** Initial styling */
 h1 {
-  color: black
+  color: black;
 }
 
 /** MORE STYLES */
@@ -218,8 +216,8 @@ header h1 {
 h1 {
   color: blue;
 }
-
 ```
+
 -> Although the header h1 falls in with the h1 selector from the second style declaration we will have our h1 be coloured red since the specificity of the `header h1` selector is greater then that of the `h1` selector.
 
 You can think of these selectors being given points.
@@ -235,3 +233,150 @@ Here is this arbitrary points system and how it determines which styles take pre
 <br />
 
 # [Typography](./typography.md)
+
+<br />
+
+# [Units](./units.md)
+
+<br />
+
+# Background
+
+When using the background style property, we can use it to add a background image to our application without defining the image in our html or js code.
+
+We have a few properties we can use to manipulate this image. For example we can use `background-repeat` to repeat our image in the x axis with `repeat-x` or in the y with `repeat-y` or to not repeat at all with `no-repeat`.
+
+The background-size property can be used to size the image according to your needs.
+
+There are 3 main object fit sizing keywords we can use for background images and many other objects:
+
+- _cover_ (NB: The aspect ratio of the image is kept the same as the original)
+
+  This will cover the entire space required!
+
+- _contain_ (NB: The aspect ratio of the image is kept the same as the original)
+
+  This will contain the image within the space required and if there is space left over the image will be repeated.
+
+<br />
+
+Not we can still size our images with normal css units of measurements:
+
+```css
+p {
+  background-size: 150px 200px;
+}
+
+p {
+  background-size: 50% 50%;
+}
+
+/* THIS IS WRONG: (We can not provide negative lengths) */
+p {
+  background-size: -150px -200px;
+}
+```
+
+<br />
+
+### We can adjust our background positioning with the:
+
+```css
+div {
+  height: 100%;
+  background-image: url("http://i.imgur.com/ThtOO8z.png");
+  background-repeat: no-repeat;
+
+  /* With the x and y values below👇 */
+  background-position: 200px 50px;
+}
+```
+
+This can either use keywords like below or px values as above, or even percentages:
+
+```css
+div {
+  background-position: bottom left;
+}
+```
+
+<br />
+
+### Background Shorthand
+
+![](./assets/bg-shorthand.jpg)
+
+This will allow us to define all of our background styles in a single style line.
+
+Which means we go from this:
+
+```css
+.bg {
+  background-image: url("path/to/image.png");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* TO THIS */
+.bg {
+  background: url("path/to/image.png") 50% 50% / cover no-repeat;
+}
+```
+
+<br />
+
+### Border Box Sizing
+
+This is a style that allows us to not relatively grow the size of the box when adding padding and border styles.
+
+```css
+div {
+  box-sizing: border-box; /* This is referring to the css Box Model */
+}
+```
+
+This will allow our box model to retain its size, while we add padding and border styles to the element.
+
+<br />
+
+### Variables
+
+Variables in CSS are now native and they work the same as they do in our Sass (css preprocessor) they just have different syntax. A syntax example can be seen below:
+
+```css
+div {
+  --bgcolor: teal;
+  --color: red;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+}
+
+div.test {
+  background-color: var(--color);
+  color: var(--color)
+}
+
+div.ew {
+  background-color: var(--color);
+  color: var(--color)
+}
+```
+
+**NOTE:** In css we need to use the `var()` method syntax to allow the usage of variables in css. 
+
+And remember you can store more then just colours in these css variables:
+
+```css
+/* Example of setting a size variable */
+:root {
+ --size: 20
+}
+
+div {
+   font-size: var(--size)px
+}
+```
+
+<br />
