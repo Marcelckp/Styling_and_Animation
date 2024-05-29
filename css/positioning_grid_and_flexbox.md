@@ -117,3 +117,111 @@ Here is a stylesheet example:
 <br />
 
 # Grid
+
+_NOTE: Css GRID and Flexbox can be used together to make cool designs and solve unique challenges!_
+
+#### Difference between Grid and Flexbox:
+
+**_<font color=gold>Grid is a 2-dimensional system that handles rows and columns at the same time. Unlike flex box which is considered 1-dimensional as it can only handle one of these tracks at a time</font>_**
+
+### Terminology
+
+- **Grid Item/Cell:**
+
+  These are the rectangle space sections that will contain content in them. This is the smallest part of a grid
+
+- **Grid Area:**
+
+  This is a area made up of grid cells, it can be a singular grid cell or multiple grid cells combined
+
+  ![](./assets/gridArea.jpg)
+
+- **Grid Track:**
+
+  This is the space between 2 grid lines. A fancy way of referring to grid _columns and rows_
+
+<br />
+
+### Properties
+
+- **display:**
+
+  This property is set to grid or inline-grid to create a grid container.
+
+- **grid-template-columns, grid-template-rows:**
+
+  These properties define the columns and rows of the grid with a space-separated list of values. The values represent the track size, and the space between them represents the grid lines.
+
+  ```css
+  body {
+    ...
+    grid-template-rows: 1fr 50px;
+    grid-template-columns: 50px 1fr;
+  }
+  ```
+
+- **grid-template-areas:**
+
+  This property defines a grid template by referencing the names of the grid areas which are specified with the grid-area property.
+
+  ```css
+  body {
+    grid-template-areas:
+      "sidebar  content"
+      "footer   footer";
+  }
+  ```
+
+  This can almost be see as visually placing the gird-area section into a picture/format. Before we can do this successfully we need to have the different string above as actual: `grid-area` values on the items we which to place in that `grid template area`.
+
+- **grid-template:**
+
+  This is a shorthand property for grid-template-rows, grid-template-columns, and grid-template-areas.
+
+- **grid-column-gap, grid-row-gap:**
+
+  These properties define the size of the gap between the columns/rows.
+
+- **grid-gap:**
+
+  This is a shorthand property for grid-row-gap and grid-column-gap.
+
+- **justify-items:**
+
+  This property aligns grid items along the row axis.
+
+- **align-items:**
+
+  This property aligns grid items along the column axis.
+
+- **justify-content:**
+
+  This property aligns the grid along the row axis.
+
+- **align-content:**
+
+  This property aligns the grid along the column axis.
+
+- **grid-auto-columns, grid-auto-rows:**
+
+  These properties specify the size of any auto-generated grid tracks.
+
+- **grid-auto-flow:**
+
+  This property specifies how auto-placed items get inserted in the grid.
+
+- **grid:**
+
+  This is a shorthand property for grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and grid-auto-flow.
+
+- **grid-row-start, grid-column-start, grid-row-end, grid-column-end:**
+
+  These properties determine a grid item’s location within the grid by referring to specific grid lines.
+
+- **grid-row, grid-column:**
+
+  These are shorthand properties for grid-row-start/grid-row-end and grid-column-start/grid-column-end respectively.
+
+- **grid-area:**
+
+  This property gives an item a name so that it can be referenced by a template created with the grid-template-areas property.
