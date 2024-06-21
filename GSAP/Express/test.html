@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP Playground</title>
+    <link type="text/css" rel="stylesheet" href="./styles.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async
+      src="./examples/gsapExamples.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async
+      src="./examples/gsapStaggering.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async
+      src="./examples/gsapTweenControls.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async
+      src="./examples/gsapTransformOirign.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async
+      src="./examples/gsapTimelines.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async
+      src="./examples/gsapHovers.js"
+    ></script>
+  </head>
+  <body>
+    <section title="Introduction">
+      <h2>Tweening</h2>
+      <h1>Hello</h1>
+      <br />
+      <br />
+      <svg width="200" class="big-star" height="200">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          fill="red"
+          d="M50 0 L61.18 35.18 L98.39 35.18 L68.36 57.31 L79.54 92.82 L50 71.09 L20.46 92.82 L31.64 57.31 L1.61 35.18 L38.82 35.18 Z"
+        />
+      </svg>
+      <br />
+      <br />
+      <svg width="200" class="bigger-star" height="200">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          fill="red"
+          d="M50 0 L61.18 35.18 L98.39 35.18 L68.36 57.31 L79.54 92.82 L50 71.09 L20.46 92.82 L31.64 57.31 L1.61 35.18 L38.82 35.18 Z"
+        />
+      </svg>
+    </section>
+    <hr />
+
+    <section title="Staggering" style="display: flex; flex-direction: column">
+      <h2>Staggering</h2>
+      <svg width="100" class="star" height="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          fill="red"
+          d="M50 0 L61.18 35.18 L98.39 35.18 L68.36 57.31 L79.54 92.82 L50 71.09 L20.46 92.82 L31.64 57.31 L1.61 35.18 L38.82 35.18 Z"
+        />
+      </svg>
+      <svg width="100" class="star" height="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          fill="red"
+          d="M50 0 L61.18 35.18 L98.39 35.18 L68.36 57.31 L79.54 92.82 L50 71.09 L20.46 92.82 L31.64 57.31 L1.61 35.18 L38.82 35.18 Z"
+        />
+      </svg>
+      <svg width="100" class="star" height="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          fill="red"
+          d="M50 0 L61.18 35.18 L98.39 35.18 L68.36 57.31 L79.54 92.82 L50 71.09 L20.46 92.82 L31.64 57.31 L1.61 35.18 L38.82 35.18 Z"
+        />
+      </svg>
+      <svg width="100" class="star" height="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          fill="red"
+          d="M50 0 L61.18 35.18 L98.39 35.18 L68.36 57.31 L79.54 92.82 L50 71.09 L20.46 92.82 L31.64 57.31 L1.61 35.18 L38.82 35.18 Z"
+        />
+      </svg>
+
+      <br />
+
+      <h2>Staggering Object</h2>
+      <svg width="100" class="blue-star" height="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          fill="blue"
+          d="M50 0 L61.18 35.18 L98.39 35.18 L68.36 57.31 L79.54 92.82 L50 71.09 L20.46 92.82 L31.64 57.31 L1.61 35.18 L38.82 35.18 Z"
+        />
+      </svg>
+      <svg width="100" class="blue-star" height="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          fill="blue"
+          d="M50 0 L61.18 35.18 L98.39 35.18 L68.36 57.31 L79.54 92.82 L50 71.09 L20.46 92.82 L31.64 57.31 L1.61 35.18 L38.82 35.18 Z"
+        />
+      </svg>
+      <svg width="100" class="blue-star" height="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          fill="blue"
+          d="M50 0 L61.18 35.18 L98.39 35.18 L68.36 57.31 L79.54 92.82 L50 71.09 L20.46 92.82 L31.64 57.31 L1.61 35.18 L38.82 35.18 Z"
+        />
+      </svg>
+      <svg width="100" class="blue-star" height="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          fill="blue"
+          d="M50 0 L61.18 35.18 L98.39 35.18 L68.36 57.31 L79.54 92.82 L50 71.09 L20.46 92.82 L31.64 57.31 L1.61 35.18 L38.82 35.18 Z"
+        />
+      </svg>
+      <svg width="100" class="blue-star" height="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          fill="blue"
+          d="M50 0 L61.18 35.18 L98.39 35.18 L68.36 57.31 L79.54 92.82 L50 71.09 L20.46 92.82 L31.64 57.31 L1.61 35.18 L38.82 35.18 Z"
+        />
+      </svg>
+    </section>
+
+    <br />
+    <hr />
+
+    <section title="Tween Controls">
+      <h2>Tween Controls</h2>
+
+      <svg id="triangle" width="100" height="100" style="margin-left: 50">
+        <polygon points="50,0 100,100 0,100" fill="blue" />
+      </svg>
+
+      <br />
+
+      <br />
+
+      <button id="play">play</button>
+      <button id="pause">pause</button>
+      <button id="reverse">reverse</button>
+      <button id="restart">restart</button>
+    </section>
+
+    <br />
+    <hr />
+
+    <section title="Transition Origins" style="margin-bottom: 200px">
+      <h2>Transition Origin</h2>
+
+      <svg width="200" class="octagon" height="200" style="margin-left: 50px">
+        <polygon
+          points="100,0 200,50 200,150 100,200 0,150 0,50"
+          fill="green"
+        />
+      </svg>
+    </section>
+
+    <br />
+    <hr />
+    <br />
+    <br />
+
+    <section
+      title="Timelines"
+      style="margin-bottom: 200px; position: relative; overflow: hidden"
+    >
+      <h2>Timelines</h2>
+
+      <link
+        href="https://fonts.googleapis.com/css?family=Kanit:200,400,500&display=swap"
+        rel="stylesheet"
+      />
+      <img
+        id="title"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/meet-the-freds.png"
+        alt=""
+      />
+
+      <br />
+      <br />
+
+      <div id="freds">
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/fred.svg"
+        />
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/fred-purple.svg"
+        />
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/fred-blue.svg"
+        />
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/fred-pink.svg"
+        />
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/fred-orange.svg"
+        />
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/fred-red.svg"
+        />
+      </div>
+
+      <br />
+      <br />
+
+      <img
+        style="position: absolute; top: 0; right: 0"
+        id="time"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/time.png"
+      />
+    </section>
+
+    <br />
+    <hr />
+    <br />
+
+    <section
+      title="Timelines positions and starts"
+      style="margin-bottom: 200px; position: relative; overflow: hidden"
+    >
+      <h2>Timelines Position and Starts</h2>
+
+      <link
+        href="https://fonts.googleapis.com/css?family=Kanit:200,400,500&display=swap"
+        rel="stylesheet"
+      />
+      <img
+        id="timeline-title"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/meet-the-freds.png"
+        alt=""
+      />
+
+      <br />
+      <br />
+
+      <div id="timeline-freds">
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/fred.svg"
+        />
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/fred-purple.svg"
+        />
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/fred-blue.svg"
+        />
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/fred-pink.svg"
+        />
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/fred-orange.svg"
+        />
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/fred-red.svg"
+        />
+      </div>
+
+      <br />
+      <br />
+
+      <img
+        style="position: absolute; top: 0; right: 0"
+        id="timeline-time"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32887/time.png"
+      />
+
+      <br />
+
+      <button id="timeline-play">play</button>
+      <button id="timeline-pause">pause</button>
+      <button id="timeline-reverse">reverse</button>
+      <button id="timeline-restart">restart</button>
+      <button id="timeline-test">play from test</button>
+    </section>
+
+    <br />
+    <br />
+    <hr />
+
+    <section
+      title="hover effects"
+      style="display: flex; flex-direction: column"
+    >
+      <h2>Hover Effects</h2>
+
+      <br />
+
+      <div class="nav-item">
+        <div class="dot"></div>
+        <h3>ABOUT</h3>
+      </div>
+
+      <div class="nav-item">
+        <div class="dot"></div>
+        <h3>CONTACT</h3>
+      </div>
+
+      <div class="nav-item">
+        <div class="dot"></div>
+        <h3>HOME</h3>
+      </div>
+
+      <div class="nav-item">
+        <div class="dot"></div>
+        <h3>PROJECTS</h3>
+      </div>
+    </section>
+
+    <br />
+    <br />
+    <hr />
+
+    <section
+      title="hover pulse effects"
+      style="display: flex; flex-direction: column"
+    >
+      <h2>Hover Pulse Effects</h2>
+
+      <br />
+
+      <button
+        class="youtube-button"
+        style="
+          background-color: red;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          font-size: 16px;
+          border-radius: 5px;
+          width: fit-content;
+          margin-bottom: 20px;
+          will-change: transform; /* to prevent lag we tell the browser that it should anticipate a animation change on this component */
+          transform: scale(0.8);
+        "
+      >
+        Subscribe
+      </button>
+    </section>
+  </body>
+</html>
