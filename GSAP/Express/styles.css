@@ -1,0 +1,26 @@
+body {
+  background-color: #f0f0f0;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.nav-item {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-item h3 {
+    font-weight: bolder;
+    font-size: 2rem;
+} 
+
+.dot {
+  background-color: #766d6d;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
