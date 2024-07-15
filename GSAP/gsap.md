@@ -77,3 +77,15 @@ This means that in Framer Motion you need to think a bit more to make the animat
 <font color=cyan>If you are working with a non react application / frame work then we should use GSAP.</font>
 
 ### ***We should learn both of these tools as they are both needed in there specific contexts.***
+
+<br />
+
+### Notes for using GSAP in React
+
+When we use GSAP in react we should run our animation code inside a `useGSAP` or `useLayoutEffect` since we want the animation to be present before the DOM markup is rendered.
+
+This will prevent FOC!
+
+Since GSAP is imperative we need to use refs and supply these ref's to our elements so that that we can use them with our GSAP instance to allow us to create animations for our components. (the ones we have referenced) This needs a `useGSAP OR useLayoutEffect` to ensure we don't encounter any bugs.
+
+`Framer` is declarative which allows us to bake this into our markup when it is defined.
