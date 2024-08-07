@@ -1,6 +1,6 @@
 # GSAP 3 Express
 
-GSAP 3 give us a ***gsap*** object that will be our access point to everything the engine does. It allows us to:
+GSAP 3 give us a **_gsap_** object that will be our access point to everything the engine does. It allows us to:
 
 - Create animations.
 
@@ -12,13 +12,13 @@ GSAP 3 give us a ***gsap*** object that will be our access point to everything t
 
 <br />
 
-This object has 3 main methods for creating ***Tweens*** and optionally adding them to ***Timelines***:
+This object has 3 main methods for creating **_Tweens_** and optionally adding them to **_Timelines_**:
 
-- *gsap*.to()
+- _gsap_.to()
 
-- *gsap*.from()
+- _gsap_.from()
 
-- *gsap*.fromTo()
+- _gsap_.fromTo()
 
 <br />
 
@@ -26,11 +26,11 @@ This object has 3 main methods for creating ***Tweens*** and optionally adding t
 
 A tween is the process of generating intermediate frames between two states to give the appearance of evolution from the first state to the second.
 
-Its used to change a single property of a single object over time. => It's short for ***betweening***. IE) the space in between the two states.
+Its used to change a single property of a single object over time. => It's short for **_betweening_**. IE) the space in between the two states.
 
 For example if we change an elements opacity, we might use a tween to get it from 0 to 1 to fade it in.
 
-***Note:*** For the best performance when using Tweens use CSS Transforms and opacity. Although GSAP  ***can animate any numeric property*** like:
+**_Note:_** For the best performance when using Tweens use CSS Transforms and opacity. Although GSAP **_can animate any numeric property_** like:
 
 - width and height.
 
@@ -40,7 +40,7 @@ For example if we change an elements opacity, we might use a tween to get it fro
 
 - color
 
-- vh, vw 
+- vh, vw
 
 - etc...
 
@@ -54,7 +54,6 @@ These tweens and timelines can act on multiple elements at the same time! We can
 
 ## Concepts and Properties
 
-
 ##### We can use delay and repeat as special properties for repeating animation or delaying them for a few seconds depending on your preferences.
 
 [Here is an example of these being used](./gsapExamples.js)
@@ -63,14 +62,20 @@ These tweens and timelines can act on multiple elements at the same time! We can
 
 [Here is an example of eases being used](./examples/gsapExamples.js) If you look at the h1 animation you can see it has a ease of bounce. Notice what happens when the html DOC loads.
 
-If we want to specify when the ease will act on the animation we can supply the following *.property*:
+If we want to specify when the ease will act on the animation we can supply the following _.property_:
 
 ```js
-{ ease: "bounce.in" }
+{
+  ease: "bounce.in";
+}
 
-{ ease: "elastic.out" }
+{
+  ease: "elastic.out";
+}
 
-{ ease: "back(6).inOut" }
+{
+  ease: "back(6).inOut";
+}
 ```
 
 #### Eases
@@ -83,7 +88,7 @@ Easing dictates the rate of change of an animation and the direction of the chan
 
 Flat ease curves will cause slow rates of change and steep curves will cause quick rates of change.
 
-***NB: In summary Ease curves dictate the rate of change within an animation***
+**_NB: In summary Ease curves dictate the rate of change within an animation_**
 
 #### <font color=gold>You can create your own ease curve using the Custom Ease function. [Here is a ease curve visualizer to try out](https://gsap.com/docs/v3/Eases)</font>
 
@@ -91,29 +96,33 @@ Flat ease curves will cause slow rates of change and steep curves will cause qui
 
 #### Why from() Tweens glitch and stop working
 
-![](./assets/from()_glitch.jpg)
+![](<./assets/from()_glitch.jpg>)
 
 This is not a glitch more as it is a logical understanding flaw. The issues here is that we are scaling from 0 to a value that is random and will always change. A few to fix this is to use a `.fromTo()` to define the start and the end of the animation.
 
 Here is how we would fix it
 
 ```js
-const tween = gsap.fromTo(bg, { scale: 0, duration: 1 }, { scale: 1, ease: "circ" })
+const tween = gsap.fromTo(
+  bg,
+  { scale: 0, duration: 1 },
+  { scale: 1, ease: "circ" }
+);
 
 button.addEventListener("mouseenter", () => {
-    tween.restart();
-})
+  tween.restart();
+});
 ```
 
 <br />
 
 #### Transform Origin
 
-The transform origin is a point around which transforms like *rotation, skew, and scale* will be applied.
+The transform origin is a point around which transforms like _rotation, skew, and scale_ will be applied.
 
-It is defined as a pair of horizontal(x)  and vertical(y) axis values.
+It is defined as a pair of horizontal(x) and vertical(y) axis values.
 
-DOM elements have their center being the transformOrigin *50% (x) 50% (y)* OR we can use the keywords to represent the origin `center center => 50% 50%`
+DOM elements have their center being the transformOrigin _50% (x) 50% (y)_ OR we can use the keywords to represent the origin `center center => 50% 50%`
 
 <br />
 
@@ -125,7 +134,7 @@ DOM elements have their center being the transformOrigin *50% (x) 50% (y)* OR we
 
 ### What is a Timeline?
 
-***<font color=lightgreen>A timeline is a container for tweens</font>***. This allows us to control them as a whole and precisely manage their timing. In summary you can control multiple tweens as a single unit. (Specifically to make animation sequencing a breeze)
+**_<font color=lightgreen>A timeline is a container for tweens</font>_**. This allows us to control them as a whole and precisely manage their timing. In summary you can control multiple tweens as a single unit. (Specifically to make animation sequencing a breeze)
 
 ### Why should we use it?
 
@@ -140,3 +149,40 @@ It allows us to have the following super powers:
 - Nesting: We can have deep levels of control since we can nest timelines within timelines.
 
 - Relative timing: Timelines allow for relative timing, which means you can start an animation while another is playing or afterwards if you do not need the animation overlap.
+
+<br />
+
+# Dealing with FOC (Flashes of content)
+
+This is the concept of content flashing on the screen which is a result of the page loading before your javascript can run causing the user to see the content before it is animated.
+
+#### How do you deal with this issue is to prevent the content from being shown until the content is loaded on the page with JS. We will hide the content with CSS until that point where the load event is triggered in the JS DOM.
+
+<br />
+
+# Keyframes in GSAP
+
+This animation style for timelines works the same way it does within CSS, although now we can use the power of GSAP animations with the power of Keyframe animations.
+
+Here is an example of what this looks like in code:
+
+```js
+const tl = gsap.timeline();
+
+tl.to('.slime', {
+    keyframes: {
+        "25%": { y: 0 },
+        "50%": { y: -100, ease: 'sine' },
+        "75%": { y: 0, ease: 'power1.in' },
+        "100%": { x: 320, ease: "bounce" } // The object holds the properties of the animation that will occur at the 100% position of the animation
+        easeEach: "bounce"
+    }
+    duration: 3
+})
+```
+
+#### A major draw back to using key frame animation is adjusting the timing after you have created your animation as you will need to adjust the percentages which can be tedious as you need to be precise.
+
+This is the difference point between `keyframes` and `timelines`. 
+
+### *Timelines* are necessary for the precise orchestration of multiple tweens on multiple target elements. While *Keyframes* add super powers to individual tweens. They can be used together to create master pieces.
